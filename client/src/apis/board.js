@@ -19,7 +19,7 @@ class Board {
 
   
   static async create({title, body}) {
-
+    return axios.post(`${HOST}board/`, {title, body});
   }
 
   static async update(id, {title, body}) {

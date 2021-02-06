@@ -1,5 +1,5 @@
 import DefaultTemplete from '../../templetes/default';
-import BoardDetail from '../../organisms/board';
+import BoardDetail from '../../organisms/boards/detail';
 
 const Detail = props => {
   return (

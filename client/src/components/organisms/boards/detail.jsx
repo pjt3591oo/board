@@ -9,7 +9,7 @@ import api from '../../../apis';
 const Board = props => {
   const [ boardId, setBoardId ] = useState(props.match.params.id)
   const [ board, setBoard] = useState({});
-  const [ writeMode, setWriteMode ] = useState(true)
+  const [ editMode, setEditMode ] = useState(true)
 
   useEffect(() => {
     (async () => {
@@ -31,7 +31,7 @@ const Board = props => {
     console.log('test')
     try {
       await api.board.update(boardId, {title: board.title, body: board.body})
-      setWriteMode(true)
+      setEditMode(true)
     } catch(err) {
       console.log(err)
     }
@@ -42,13 +42,13 @@ const Board = props => {
       <FormBoard 
         board={board}
         onChange={changedBoard => setBoard({...board, title: changedBoard.title, body: changedBoard.body})}
-        writeMode={writeMode}
+        editMode={editMode}
       />
       
       <div>
-        {writeMode ? (
+        {editMode ? (
           <>
-            <Btn value="수정" onClick={() => setWriteMode(false)}/>
+            <Btn value="수정" onClick={() => setEditMode(false)}/>
             <Btn value="삭제" onClick={onDeleteClickhandler} />
           </>
         ): (

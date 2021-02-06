@@ -3,17 +3,20 @@ import {
   Route,
 } from "react-router-dom";
 
-import BoardsPage from '../components/pages/boards';
-import BoardDetail from '../components/pages/boards/detail';
-import BoardEdit from '../components/pages/boards/edit';
+import BoardListPage from '../components/pages/boards/list';
+import BoardDetailPage from '../components/pages/boards/detail';
+import BoardEditPage from '../components/pages/boards/edit';
+import BoardWritePage from '../components/pages/boards/write';
+
 
 const Routes = () => {
   return (
     <div>
       <Switch>
-        <Route exact path="/board" component={BoardsPage}/>
-        <Route exact path="/board/detail/:id" component={BoardDetail}/>
-        <Route exact path="/board/edit/:id" component={BoardEdit}/>
+        <Route exact path="/board" component={BoardListPage}/>
+        <Route exact path="/board/write" component={BoardWritePage}/>
+        <Route exact path="/board/detail/:id" component={BoardDetailPage}/>
+        <Route exact path="/board/edit/:id" component={BoardEditPage}/>
       </Switch>
     </div>
   )

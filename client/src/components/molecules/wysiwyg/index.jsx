@@ -86,7 +86,7 @@ const Wysiwyg = props => {
             },
           },
         }}
-        placeholder="내용을 작성해주세요."
+        placeholder="한글입력의 경우 정상적으로 저장되지 않을 수 있습니다."
         localization={{
           locale: 'ko',
         }}

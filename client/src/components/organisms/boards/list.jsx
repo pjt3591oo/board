@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 
+import Btn from '../../atoms/button';
 import Row from '../../molecules/row/board';
 import Pagination from '../pagination';
 
@@ -48,12 +49,18 @@ const Boards = props => {
       </table>
 
       <div style={{marginTop: 20}}>
+        
+        <div style={{float: 'right'}}>
+          <Btn value="글 작성" onClick={() => props.history.push('/board/write')}/>
+        </div>
+        
         <Pagination 
           limit={limit}
           currentPage={currentPage}
           totalPage={totalPage}
           onChange={currentPage => setCurrentpage(currentPage)}
         />
+
       </div>
     </div>
   )

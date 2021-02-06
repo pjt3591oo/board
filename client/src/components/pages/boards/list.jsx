@@ -1,5 +1,5 @@
 import DefaultTemplete from '../../templetes/default';
-import TableBoard from '../../organisms/boards';
+import TableBoard from '../../organisms/boards/list';
 
 const Boards = props => {
   return (

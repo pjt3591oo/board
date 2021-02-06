@@ -1,17 +1,17 @@
 
 import React from 'react';
 
-import Boards from './';
+import List from './list';
 
 export default {
   title: 'Organisms/Boards/List',
-  component: Boards,
+  component: List,
   argTypes: {
     // backgroundColor: { control: 'color' },
   }
 }
 
-const Template = (args) => <Boards {...args} />;
+const Template = (args) => <List {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
