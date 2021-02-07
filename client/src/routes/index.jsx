@@ -1,6 +1,7 @@
 import {
   Switch,
   Route,
+  Link
 } from "react-router-dom";
 
 import BoardListPage from '../components/pages/boards/list';
@@ -13,7 +14,7 @@ const Routes = () => {
   return (
     <div>
       <Switch>
-        <Route exact path="/" component={<>board</>}/>
+        <Route exact path="/" component={() => <Link to="/board">심플 게시판</Link>}/>
         <Route exact path="/board" component={BoardListPage}/>
         <Route exact path="/board/write" component={BoardWritePage}/>
         <Route exact path="/board/detail/:id" component={BoardDetailPage}/>

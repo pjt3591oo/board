@@ -10,7 +10,7 @@ const Pagination = (props) => {
   let pageEnd = props.currentPage + (VIEW_PAGE_CNT / 2)
 
   for(let i = pageStart ; i < pageEnd ; ++i) {
-    if ( i >= 0 && i < props.totalPage - 1) {
+    if ( i >= 0 && i < props.totalPage) {
       pages.push(
         <DefaultText 
           onClick={() => props.onChange(i)}
@@ -18,7 +18,7 @@ const Pagination = (props) => {
         >{i}</DefaultText>
       )
     }
-    else if(i < props.totalPage - 1) {pageEnd += 1}
+    else if(i < 0) {pageEnd += 1}
   }
 
   return (

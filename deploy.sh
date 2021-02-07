@@ -1,3 +1,7 @@
+# 환경변수 파일생성
+echo 'REACT_APP_MODE=prod' > ./client/.env
+echo 'MODE=prod' > ./server/.env
+
 # 웹 빌드
 cd client
 npm run build

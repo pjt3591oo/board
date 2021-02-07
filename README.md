@@ -9,15 +9,50 @@
 디자인: styled-components, storybook
 ```
 
-# 서버실행
+# 배포
+
+## production
+
+* up
 
 ```
-$ cd server
-$ npm run start
+$ chmod 755 deploy.sh
+
+$ ./deploy.sh
 ```
 
-# 디비
+* down
+
+```
+$ docker-compose down
+```
+
+# 로컬 테스트
+
+* 디비
 
 ```
 $ docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password --name board.db.com mysql:5.7
+
+$ docker exec -it board.db.com mysql -u root -ppassword -e "CREATE DATABASE Boards;"
+```
+
+데이터베이스 생성 명령어에서 다음과 같은 경고문구가 출력될 수 있음.
+
+```
+mysql: [Warning] Using a password on the command line interface can be insecure.
+```
+
+* 서버
+
+```
+$ cd server 
+$ npm run start:dev
+```
+
+* 웹
+
+```
+$ cd client 
+$ npm run start
 ```

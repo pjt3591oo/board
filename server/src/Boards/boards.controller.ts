@@ -26,7 +26,7 @@ export default class BoardController {
     limit = limit || this.limit
     return {
       results: await this.boardService.getAll(page, limit),
-      totalPage: Math.floor(await this.boardService.getCount() / limit)
+      totalPage: Math.ceil(await this.boardService.getCount() / limit)
     };
   }
 
