@@ -10,6 +10,10 @@ import apis from '../../../apis';
 
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
+import CONFIG from '../../../config';
+
+const FILE_PATH = CONFIG.FILE[process.env.REACT_APP_MODE || 'dev'];
+
 const Wysiwyg = props => {
   const [editorState, setEditorState] = React.useState(() =>
     EditorState.createEmpty(),
@@ -47,7 +51,7 @@ const Wysiwyg = props => {
 
       return new Promise(
         (resolve, reject) => {
-          resolve({ data: { link: `http://127.0.0.1:3000/${data.path}` } });
+          resolve({ data: { link: `${FILE_PATH}${data.path}` } });
         }
       );
     } catch(err) {

@@ -1,0 +1,48 @@
+version: "3.9"  # optional since v1.27.0
+
+services:
+  board.server.com:
+    image: nginx
+    ports: 
+      - "80:80"
+    volumes:
+      - ./upload:/var/upload/
+    links: 
+      - board.apis.com
+    environment:
+      - MODE=prod
+    networks:
+      - board.network
+      
+  board.apis.com:
+    image: node:12
+    working_dir: /home/node/app
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./upload:/var/upload/
+      - ./server:/home/node/app
+    command: "npm start"
+    environment:
+      - MODE=prod
+    links:
+      - board.db.com
+    networks:
+      - board.network
+
+  # 디비
+  board.db.com:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=password    
+      - MYSQL_DATABASE=Boards
+      - TZ=Asia/Seoul
+
+    networks:
+      - board.network
+
+networks: 
+  board.network:
+    driver: bridge

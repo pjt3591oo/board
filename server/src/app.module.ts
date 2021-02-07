@@ -7,8 +7,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ServeStaticModule } from '@nestjs/serve-static';
 
 import CONFIG from './config';
+const MODE = process.env.MODE ||'dev';
 
-const MODE = process.env.mode || 'dev';
+console.log(CONFIG, MODE, process.env.mode)
 
 @Module({
   imports: [

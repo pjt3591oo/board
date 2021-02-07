@@ -6,7 +6,7 @@ import FileService from './file.service';
 
 import CONFIG from '../config';
 
-const MODE = process.env.mode || 'dev';
+const MODE = process.env.MODE || 'dev';
 
 @Module({
   imports: [
