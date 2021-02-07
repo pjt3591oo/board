@@ -1,4 +1,4 @@
-# 기술스택
+# Tech Stacks
 
 ```
 서버: nest.js
@@ -8,6 +8,18 @@
 프론트: react.js
 디자인: styled-components, storybook
 ```
+
+# Architecture
+
+![](./deploy/architecture.png)
+
+배포에 대한 생각
+
+프로덕션 모드에선 API 서버의 직접 접속을 허용하지 않는다.
+
+실제 환경이라면 API 서버는 board.server.com의 역할을 하는 웹서버 접속만 허용한다.
+
+개발모드에선 웹서버를 앞단에 두기엔 점검 포인트가 증가하므로 API 서버에 직접 접근을 허용한다.
 
 # 배포
 
@@ -30,6 +42,8 @@ $ docker-compose down
 http://localhost/board
 
 swagger => http://localhost/api
+
+production의 경우 서버 API의 endpoint는 API 요청과 File 접근 시 각각 /apis, /upload을 prefix 해야한다.
 
 # 로컬 테스트
 
@@ -62,8 +76,6 @@ $ npm run start:dev
 $ cd client 
 $ npm run start
 ```
-
-
 
 ---
 
