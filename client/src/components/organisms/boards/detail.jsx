@@ -45,17 +45,23 @@ const Board = props => {
         editMode={editMode}
       />
       
-      <div>
-        {editMode ? (
-          <>
-            <Btn value="수정" onClick={() => setEditMode(false)}/>
-            <Btn value="삭제" onClick={onDeleteClickhandler} />
-          </>
-        ): (
-          <>
-            <Btn value="저장" onClick={onSaveHandler}/>
-          </>
-        )}
+      <div style={{height: 40}}>
+        <div style={{float: 'right'}}>
+          <Btn value="목록" onClick={() => props.history.push('/board')}/>
+        </div>
+        <div>
+          {editMode ? (
+            <>
+              <Btn value="수정" onClick={() => setEditMode(false)}/>
+              <Btn value="삭제" onClick={onDeleteClickhandler} />
+            </>
+          ): (
+            <>
+
+              <Btn value="저장" onClick={onSaveHandler}/>
+            </>
+          )}
+        </div>
       </div>
     </div>
   )

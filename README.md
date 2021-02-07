@@ -27,6 +27,10 @@ $ ./deploy.sh
 $ docker-compose down
 ```
 
+http://localhost/board
+
+swagger => http://localhost/api
+
 # 로컬 테스트
 
 * 디비
@@ -50,9 +54,17 @@ $ cd server
 $ npm run start:dev
 ```
 
+서버/api 접속할 경우 swagger 접속가능
+
 * 웹
 
 ```
 $ cd client 
 $ npm run start
 ```
+
+
+
+---
+
+디자인은 귀찮아서 도저히 못하겠다 ㅋㅋ

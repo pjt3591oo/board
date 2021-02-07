@@ -61,7 +61,7 @@ const Wysiwyg = props => {
   }
 
   return (
-    <div style={{height: '100%'}}>
+    <div style={{height: '100%', minHeight: 600}}>
       <Editor
         editorState={editorState}
         onEditorStateChange={onEditorStateChange}

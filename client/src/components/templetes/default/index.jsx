@@ -9,7 +9,7 @@ const Default = props => {
         {props.center}
       </div>
 
-      <div style={{width: "100%", height: 100, backgroundColor: '#e8e8e8'}}>
+      <div style={{width: "100%", height: 100, backgroundColor: '#e8e8e8', position: 'absolute', bottom: 0}}>
         임시푸터
       </div>
     </div>

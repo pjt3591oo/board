@@ -48,7 +48,7 @@ const Boards = props => {
         </tbody>
       </table>
 
-      <div style={{marginTop: 20}}>
+      <div style={{marginTop: 20, height: 40}}>
         
         <div style={{float: 'right'}}>
           <Btn value="글 작성" onClick={() => props.history.push('/board/write')}/>

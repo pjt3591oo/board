@@ -2,6 +2,15 @@
 echo 'REACT_APP_MODE=prod' > ./client/.env
 echo 'MODE=prod' > ./server/.env
 
+# 의존성 모듈 설치
+cd client
+npm install
+ce ../
+
+cd server
+npm install
+ce ../
+
 # 웹 빌드
 cd client
 npm run build
